@@ -1,0 +1,26 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.login-page-style {
+  // background: $gray-light;
+  background-color: $gray-light;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo-img {
+    width: 110px;
+    margin-bottom: 5px;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .content-box {
+    background: $white;
+    border-radius: 6px;
+    padding: 48px 60px;
+  }
+}

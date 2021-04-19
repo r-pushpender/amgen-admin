@@ -1,0 +1,40 @@
+
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.input-style {
+
+  input {
+    background: $white;
+    border:1px solid #D9E1EC;
+    height: 48px;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 100%;
+    
+
+    &::-webkit-input-placeholder { /* Edge */
+      color: $placeholderText;
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $placeholderText;
+    }
+    
+    &::placeholder {
+      color: $placeholderText;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  
+  .label-style {
+    font-size: 14px;
+    color: $black;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+}

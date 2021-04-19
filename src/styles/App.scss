@@ -1,0 +1,154 @@
+// variables
+@import './variables/colors';
+@import './variables/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
+// theme styles files
+@import './xtras';
+@import './fonts';
+
+// custom css
+* {
+  font-family: 'Work Sans', sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  // height: 100%;
+}
+
+.app-container {
+  position: relative;
+  // height: 100%;
+  // overflow-x: hidden;
+
+  overflow-x: hidden;
+}
+
+// Typography Style
+.title1,
+.title2,
+.title3,
+.title4,
+.title5,
+.title6 {
+  margin: 0;
+}
+
+.title1 {
+  font-size: 2rem;
+  line-height: 39px;
+  font-weight: bold;
+}
+
+.title2 {
+  font-size: 1.75rem;
+  line-height: 39px;
+  font-weight: 600;
+}
+
+.title3 {
+  font-size: 1.5rem;
+  line-height: 32px;
+  font-weight: 600;
+
+  // On mobile
+  @include mobile {
+    font-size: 1.3rem;
+  }
+}
+
+.title4 {
+  font-size: 1.3rem;
+  line-height: 39px;
+  font-weight: 600;
+}
+
+.title5 {
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.title6 {
+  font-size: 0.875rem;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #5A607F;
+
+  &.description-sm {
+    font-size: 14px;
+  }
+}
+
+
+// carousel foucs
+.outline-none {
+  &:focus {
+    outline: none;
+  }
+
+  .flickity-viewport {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Join us button style
+.join-us-btn {
+  width: 230px;
+  height: 230px;
+  background-image: linear-gradient(to bottom, #000081, #000030);
+  border-radius: 50%;
+  cursor: pointer;
+  color: $white;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+}
+
+.join-button-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.btn-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: $theme-primary;
+  text-decoration: none !important;
+}
+
+
+// Container size
+// .container {
+//   @media (min-width: 1600px) { 
+//     max-width: 95%;
+//    }
+// }
