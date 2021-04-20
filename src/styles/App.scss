@@ -146,6 +146,19 @@ body {
 }
 
 
+input {
+  &::-webkit-input-placeholder { /* Edge */
+    color: $placeholderText;
+  }
+  
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $placeholderText;
+  }
+  
+  &::placeholder {
+    color: $placeholderText;
+  }
+}
 // Container size
 // .container {
 //   @media (min-width: 1600px) { 

@@ -1,0 +1,33 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.upload-style {
+  min-height: 168px;
+  border-radius: 10px;
+  border: 1px dashed $placeholderText;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .upload-button {
+    font-size: 14px;
+    color: #5A607F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .btn-upload {
+    background: $white;
+    color: $theme-primary;
+    border:1px solid $placeholderText;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 102px;
+    height: 40px;
+    margin-bottom: 11px;
+  }
+}

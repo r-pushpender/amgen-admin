@@ -11,19 +11,6 @@
     border-radius: 4px;
     padding: 0 16px;
     min-width: 100%;
-    
-
-    &::-webkit-input-placeholder { /* Edge */
-      color: $placeholderText;
-    }
-    
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: $placeholderText;
-    }
-    
-    &::placeholder {
-      color: $placeholderText;
-    }
 
     &:focus {
       outline: none;

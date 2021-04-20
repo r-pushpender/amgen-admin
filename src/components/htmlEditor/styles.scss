@@ -1,0 +1,10 @@
+
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.html-editor-style {
+  .ck-editor__editable_inline {
+    min-height: 200px;
+}
+ 
+}
