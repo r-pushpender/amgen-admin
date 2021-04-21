@@ -19,6 +19,7 @@ import {
   FaUserFriends,
   FaYelp,
 } from "react-icons/fa";
+import {NavLink} from "react-router-dom";
 import logoImage from "../../assets/images/logo.png";
 
 // Styles
@@ -60,10 +61,10 @@ function MainContainer(props) {
                     id="dropdown-item-button"
                     title="Monica Simons"
                   >
-                    <Dropdown.ItemText>Dropdown item text</Dropdown.ItemText>
-                    <Dropdown.Item as="button">Action</Dropdown.Item>
-                    <Dropdown.Item as="button">Another action</Dropdown.Item>
-                    <Dropdown.Item as="button">Something else</Dropdown.Item>
+                    <Dropdown.ItemText>Item 1</Dropdown.ItemText>
+                    <Dropdown.Item as="button">Item 2</Dropdown.Item>
+                    <Dropdown.Item as="button">Item 3</Dropdown.Item>
+                    <Dropdown.Item as="button">Item 4</Dropdown.Item>
                   </DropdownButton>
                 </div>
               </div>
@@ -73,34 +74,51 @@ function MainContainer(props) {
       </div>
       <div className="row-container">
         <div className="dark-style col-left">
-          <Nav activeKey="/admins" className="flex-column">
-            <Nav.Link href="/">
+          <Nav className="flex-column">
+            <NavLink
+              className="navlink"
+              activeClassName="active"
+              exact
+              to="/"
+            >
               <FaMicrosoft className="icon" /> Dashboard
-            </Nav.Link>
-            <Nav.Link href="/admins">
+            </NavLink>
+            <NavLink
+              className="navlink"
+              activeClassName="active"
+              to="/add-admin"
+            >
               <FaShieldAlt className="icon" /> Admins
-            </Nav.Link>
-            <Nav.Link href="#">
+            </NavLink>
+            <NavLink
+              className="navlink"
+              activeClassName="active"
+              to="/create-content"
+            >
               <FaRegImage className="icon" /> Content
-            </Nav.Link>
-            <Nav.Link href="#">
+            </NavLink>
+            <NavLink className="navlink" activeClassName="active" to="/users">
               <FaUserFriends className="icon" /> Users
-            </Nav.Link>
-            <Nav.Link href="#">
+            </NavLink>
+            <NavLink
+              className="navlink"
+              activeClassName="active"
+              to="/appointments"
+            >
               <FaRegCalendarAlt className="icon" /> Appointments
-            </Nav.Link>
-            <Nav.Link href="#">
+            </NavLink>
+            <NavLink className="navlink" activeClassName="active" to="/events">
               <FaYelp className="icon" /> Events
-            </Nav.Link>
+            </NavLink>
 
             <div className="heading">Other Information</div>
 
-            <Nav.Link href="#">
+            <NavLink className="navlink" to="/usage-analytics">
               <FaChartBar className="icon" /> Usage Analytics
-            </Nav.Link>
-            <Nav.Link href="#">
+            </NavLink>
+            <NavLink className="navlink" to="help">
               <FaInfoCircle className="icon" /> Help
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </div>
         <div className="content-section col-right">

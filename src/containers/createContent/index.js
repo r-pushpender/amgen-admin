@@ -23,7 +23,7 @@ function CreateContent() {
 
           <div className="row mt--25">
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="Title" />
+              <InputPrimary placeholder="" label="Title" />
             </div>
             <div className="col-sm-6">
               <SelectPrimary
