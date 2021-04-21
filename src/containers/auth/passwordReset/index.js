@@ -13,6 +13,11 @@ function PasswordReset() {
   function handleClick() {
     history.push("/");
   }
+
+  function handleResetClick() {
+    history.push("/email-sent");
+  }
+  
   return (
     <div className="password-reset-style">
       <div className="container">
@@ -28,7 +33,7 @@ function PasswordReset() {
 
               <div className="form-section mt--45">
                 <InputPrimary placeholder="Enter Email Address" label="Email" />
-                <ButtonPrimary title="Reset Password" />
+                <ButtonPrimary title="Reset Password" onClick={handleResetClick} />
                 <div className="description description-sm bordertop-style">
                   Remembered your Password?
                 </div>
@@ -45,7 +50,7 @@ function PasswordReset() {
         </div>
       </div>
 
-      <InfoMessage/>
+      <InfoMessage />
     </div>
   );
 }

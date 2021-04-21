@@ -11,7 +11,7 @@ function ConfirmSignin(props) {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/");
+    history.push("/create-content");
   }
   return (
     <div className="password-reset-style">
@@ -31,13 +31,13 @@ function ConfirmSignin(props) {
                   placeholder="Enter verification code"
                   label="Verification Code"
                 />
-                <ButtonPrimary title="Confirm" />
+                <ButtonPrimary title="Confirm" onClick={handleClick} />
                 <div className="description description-sm bordertop-style">
                   Haven’t received a code?
                 </div>
 
                 <div className="text-center">
-                  <ButtonOutline title="Resend Code" onClick={handleClick} />
+                  <ButtonOutline title="Resend Code" />
                 </div>
               </div>
             </div>

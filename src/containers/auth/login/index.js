@@ -12,7 +12,7 @@ function Login() {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/create-content");
+    history.push("/confirm-signin");
   }
 
   return (
