@@ -1,12 +1,11 @@
-import {Link, useHistory} from "react-router-dom";
-import logoImage from "../../assets/images/logo.png";
+import {useHistory} from "react-router-dom";
 import ButtonPrimary from "../../components/buttons/buttonPrimary";
 import ButtonOutline from "../../components/buttons/buttonOutline";
-import CheckboxPrimary from "../../components/checkboxPrimary";
 import InputPrimary from "../../components/inputPrimary";
 
 // Styles
 import "./styles.scss";
+import InfoMessage from "../../components/infoMessage";
 
 function ConfirmSignin(props) {
   let history = useHistory();
@@ -19,7 +18,7 @@ function ConfirmSignin(props) {
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-sm-6">
-            <div className="content-box">
+            <div className="auth-box">
               <div className="info-section">
                 <h4 className="title1">Confirm Sign In</h4>
                 <div className="description mt--10">
@@ -38,16 +37,15 @@ function ConfirmSignin(props) {
                 </div>
 
                 <div className="text-center">
-                  <ButtonOutline
-                    title="Resend Code"
-                    onClick={handleClick}
-                  />
+                  <ButtonOutline title="Resend Code" onClick={handleClick} />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <InfoMessage />
     </div>
   );
 }

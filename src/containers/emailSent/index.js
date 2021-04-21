@@ -3,14 +3,15 @@ import email from "../../assets/images/email.svg";
 
 // Styles
 import "./styles.scss";
+import InfoMessage from "../../components/infoMessage";
 
-function EmailSent(props) {
+function EmailSent() {
   return (
     <div className="email-sent-style">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-sm-6">
-            <div className="content-box">
+            <div className="auth-box">
               <div className="info-section">
                 <img src={email} className="imageStyle"/>
                 <h4 className="title1">Reset link sent!</h4>
@@ -37,6 +38,8 @@ function EmailSent(props) {
           </div>
         </div>
       </div>
+
+      <InfoMessage/>
     </div>
   );
 }

@@ -159,6 +159,16 @@ input {
     color: $placeholderText;
   }
 }
+
+// commmon auth box
+.auth-box {
+  background: $white;
+  border-radius: 6px;
+  padding: 48px;
+  margin-bottom: 80px;
+}
+
+
 // Container size
 // .container {
 //   @media (min-width: 1600px) { 

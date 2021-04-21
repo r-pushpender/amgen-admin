@@ -5,8 +5,9 @@ import InputPrimary from "../../components/inputPrimary";
 
 // Styles
 import "./styles.scss";
+import InfoMessage from "../../components/infoMessage";
 
-function PasswordReset(props) {
+function PasswordReset() {
   let history = useHistory();
 
   function handleClick() {
@@ -17,7 +18,7 @@ function PasswordReset(props) {
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-sm-6">
-            <div className="content-box">
+            <div className="auth-box">
               <div className="info-section">
                 <h4 className="title1">Password Reset</h4>
                 <div className="description mt--10">
@@ -43,6 +44,8 @@ function PasswordReset(props) {
           </div>
         </div>
       </div>
+
+      <InfoMessage/>
     </div>
   );
 }
