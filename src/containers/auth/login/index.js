@@ -34,11 +34,12 @@ function Login() {
                 }}
                 onSubmit={() => {
                   console.log("submit");
+                  handleClick();
                 }}
               >
                 {({ values, setFieldValue, submitForm }) => (
                   <form>
-                    <div>{JSON.stringify(values)}</div>
+                    {/* <div>{JSON.stringify(values)}</div> */}
                     <div className="form-section mt--45">
                       <Field
                         component={InputPrimary}
@@ -50,12 +51,12 @@ function Login() {
                       <InputPrimary placeholder="Enter Password" label="Password" />
                       <CheckboxPrimary label="Keep me signed in" />
 
-                      <ButtonPrimary title="Sign In" onClick={() => submitForm} />
+                      <ButtonPrimary title="Sign In" onClick={() => submitForm()} />
 
                       <div className="text-center mt--25">
                         <Link className="btn-link" to="/password-reset">
                           Forgot your password?
-                  </Link>
+                        </Link>
                       </div>
                     </div>
                   </form>

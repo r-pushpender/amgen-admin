@@ -2,8 +2,8 @@
 import "./styles.scss";
 
 function InputPrimary({
-  field, // { name, value, onChange, onBlur }
-  //form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  field, // { name, value, onChange, onBlur } For future use.
+  //form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc. For future user, no not delete.
   ...props
 }) {
   return (
@@ -16,7 +16,7 @@ function InputPrimary({
             column={props.column}
             placeholder={props.placeholder}
             type={props.type}
-            {...field}
+            {...field} //This has the props I pass from parent
           />
 
 
