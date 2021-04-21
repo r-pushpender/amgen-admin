@@ -1,5 +1,5 @@
 const development = {
-  API_URL: "http://my-api.com/"
+  API_URL: "https://jsonplaceholder.typicode.com/"
 };
 
 export default development;

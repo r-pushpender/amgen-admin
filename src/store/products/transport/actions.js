@@ -1,22 +1,24 @@
-export const updateInterCityMultiDayPrice = (
-  businessCode,
-  contractId,
-  rowId,
-  payload
+import { handleError } from '../../../utils/logger/errorHandler';
+import PostApi from '../../../services/api/login';
+import * as PostActionCreators from './actionCreators';
+
+export const getPost = (
+  postID
 ) => async (dispatch) => {
-  // try {
-  //   console.log(businessCode, contractId, rowId, payload);
-  //   const response = await TransportProductApi.updateInterCityMultiDayPrice(
-  //     businessCode,
-  //     contractId,
-  //     rowId,
-  //     payload
-  //   );
-  //   if (response?.status === 200) {
-  //     Toast('success', 'Inter city multi day prices updated');
-  //   }
-  //   return response;
-  // } catch (err) {
-  //   handleError(err);
-  // }
+  try {
+    const response = await PostApi.addPost(
+      {
+        name: 'hello',
+      }
+    );
+    //debugger;
+    // if (response) {
+    //   console.log("Success");
+    //   dispatch(PostActionCreators.setContractList(response));
+    // }
+    // console.log("No Success");
+    return response;
+  } catch (err) {
+    handleError(err);
+  }
 };

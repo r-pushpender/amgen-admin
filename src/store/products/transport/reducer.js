@@ -15,10 +15,6 @@ export default function (state = initialState, action) {
 const setContractList = (state, payload) => {
   return {
     ...state,
-    contractList: {
-      ...state.contractList,
-      isDataSaved: payload?.length > 0 ? true : false,
-      data: payload ? [...payload] : [],
-    },
+    post: payload
   };
 };

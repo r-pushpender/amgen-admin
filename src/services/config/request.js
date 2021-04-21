@@ -2,11 +2,11 @@
 import Config from './apiUrl';
 
 const _AuthHeaders = async () => {
-  const currentSession = await Auth.currentSession();
-  const token = currentSession.getIdToken().getJwtToken();
+  //const currentSession = await Auth.currentSession();
+  //const token = currentSession.getIdToken().getJwtToken();
   return {
-    Authorization: `Bearer ${token}`,
-    'Content-Type': 'application/json',
+    //Authorization: `Bearer ${token}`,
+    // 'Content-Type': 'application/json',
   };
 };
 
