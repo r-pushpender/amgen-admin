@@ -27,7 +27,7 @@ function PasswordReset() {
               </div>
 
               <div className="form-section mt--45">
-                <InputPrimary placeholder="Enter Email Address" lable="Email" />
+                <InputPrimary placeholder="Enter Email Address" label="Email" />
                 <ButtonPrimary title="Reset Password" />
                 <div className="description description-sm bordertop-style">
                   Remembered your Password?

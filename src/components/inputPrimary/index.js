@@ -4,7 +4,7 @@ import "./styles.scss";
 function InputPrimary(props) {
   return (
     <div className={`input-style ${props.inputStyle}`}>
-      <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
+      <div className={`label-style ${props.labelStyle}`}>{props.label}</div>
       {props.type === "textarea" ? (
         <textarea
           row={props.row}

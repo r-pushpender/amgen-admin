@@ -7,15 +7,15 @@ function SelectPrimary(props) {
       <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
 
       <div className="select-custom">
-      <select name={props.field}>
-        {props.options.map((option) => {
-          return (
-            <option value={option} key={option}>
-              {option}
-            </option>
-          );
-        })}
-      </select>
+        <select name={props.field}>
+          {props.options.map((option) => {
+            return (
+              <option value={option} key={option}>
+                {option}
+              </option>
+            );
+          })}
+        </select>
       </div>
       <p className={props.errorClass}>{props.error}</p>
     </div>

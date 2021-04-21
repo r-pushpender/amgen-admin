@@ -27,8 +27,8 @@ function Login() {
               </div>
 
               <div className="form-section mt--45">
-                <InputPrimary placeholder="Enter Email Address" lable="Email" />
-                <InputPrimary placeholder="Enter Password" lable="Password" />
+                <InputPrimary placeholder="Enter Email Address" label="Email" />
+                <InputPrimary placeholder="Enter Password" label="Password" />
                 <CheckboxPrimary label="Keep me signed in" />
 
                 <ButtonPrimary title="Sign In" onClick={handleClick} />

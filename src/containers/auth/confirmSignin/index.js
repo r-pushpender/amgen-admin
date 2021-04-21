@@ -29,7 +29,7 @@ function ConfirmSignin(props) {
               <div className="form-section mt--45">
                 <InputPrimary
                   placeholder="Enter verification code"
-                  lable="Verification Code"
+                  label="Verification Code"
                 />
                 <ButtonPrimary title="Confirm" />
                 <div className="description description-sm bordertop-style">

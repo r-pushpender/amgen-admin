@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ButtonOutline from "../../components/buttons/buttonOutline";
 import ButtonPrimary from "../../components/buttons/buttonPrimary";
 import InputPrimary from "../../components/inputPrimary";
@@ -11,24 +12,31 @@ import "./styles.scss";
 import SelectPrimary from "../../components/selectPrimary";
 
 function AddAdmin() {
+
+  const [adminRole, setAdminRole] = useState({})
+
+
   const roleList = [
     {
+      id: 1,
       icon: <MdSecurity />,
       title: "Admin",
       description: "Description for the specific role in 1 line",
-      selectRole: "active",
     },
     {
+      id: 2,
       icon: <MdCardTravel />,
       title: "Client",
       description: "Description for the specific role in 1 line",
     },
     {
+      id: 3,
       icon: <MdRemoveRedEye />,
       title: "Viewer",
       description: "Description for the specific role in 1 line",
     },
   ];
+  console.log(adminRole)
   return (
     <div className="create-content-style">
       <MainContainer pageTitle="Add Admin">
@@ -42,16 +50,16 @@ function AddAdmin() {
 
           <div className="row mt--25">
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="First Name" />
+              <InputPrimary placeholder="" label="First Name" />
             </div>
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="Last Name" />
+              <InputPrimary placeholder="" label="Last Name" />
             </div>
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="Email Address" />
+              <InputPrimary placeholder="" label="Email Address" />
             </div>
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="Phone Number" />
+              <InputPrimary placeholder="" label="Phone Number" />
             </div>
           </div>
 
@@ -72,7 +80,9 @@ function AddAdmin() {
                     title={data.title}
                     description={data.description}
                     icon={data.icon}
-                    selectedRole={data.selectRole}
+                    id={data.id}
+                    adminRole={adminRole}
+                    selectAdminRole={setAdminRole}
                   />
                 </div>
               );
@@ -88,7 +98,10 @@ function AddAdmin() {
             </div>
 
             <div className="col-sm-6 mt--20">
-              <SelectPrimary lable="Access Level" options={["Choose", "test1", "test2", "test3"]} />
+              <SelectPrimary
+                lable="Access Level"
+                options={["Choose", "test1", "test2", "test3"]}
+              />
             </div>
           </div>
         </div>
