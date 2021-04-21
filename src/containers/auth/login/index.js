@@ -4,6 +4,7 @@ import ButtonPrimary from "../../../components/buttons/buttonPrimary";
 import CheckboxPrimary from "../../../components/checkboxPrimary";
 import InfoMessage from "../../../components/infoMessage";
 import InputPrimary from "../../../components/inputPrimary";
+import { Formik, Field } from 'formik';
 
 // Styles
 import "./styles.scss";
@@ -26,21 +27,40 @@ function Login() {
                 <h4 className="title3">Sign In</h4>
               </div>
 
-              <div className="form-section mt--45">
-                <InputPrimary placeholder="Enter Email Address" label="Email" />
-                
-                <InputPrimary placeholder="Enter Password" label="Password" />
+              <Formik
+                enableReinitialize
+                initialValues={{
+                  username: ''
+                }}
+                onSubmit={() => {
+                  console.log("submit");
+                }}
+              >
+                {({ values, setFieldValue, submitForm }) => (
+                  <form>
+                    <div>{JSON.stringify(values)}</div>
+                    <div className="form-section mt--45">
+                      <Field
+                        component={InputPrimary}
+                        name="username"
+                        value={values.username}
+                        placeholder="Enter your username" label="Username"
+                      />
+                      <InputPrimary placeholder="Enter Email Address" label="Email" />
+                      <InputPrimary placeholder="Enter Password" label="Password" />
+                      <CheckboxPrimary label="Keep me signed in" />
 
-                <CheckboxPrimary label="Keep me signed in" />
+                      <ButtonPrimary title="Sign In" onClick={() => submitForm} />
 
-                <ButtonPrimary title="Sign In" onClick={handleClick}  btnStyle="mt--15"/>
-
-                <div className="text-center mt--25">
-                  <Link className="btn-link" to="/password-reset">
-                    Forgot your password?
+                      <div className="text-center mt--25">
+                        <Link className="btn-link" to="/password-reset">
+                          Forgot your password?
                   </Link>
-                </div>
-              </div>
+                      </div>
+                    </div>
+                  </form>
+                )}
+              </Formik>
             </div>
           </div>
         </div>
