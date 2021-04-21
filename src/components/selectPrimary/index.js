@@ -23,12 +23,14 @@ function SelectPrimary(props) {
   }
   return (
     <div className={`select-style ${props.inputStyle}`}>
-      <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
+      {props.lable && (
+        <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
+      )}
 
       <div className="select-custom">
         <Select
           showSearch
-          placeholder="Select a person"
+          placeholder={props.placeholder}
           optionFilterProp="children"
           onChange={onChange}
           onFocus={onFocus}
@@ -44,7 +46,7 @@ function SelectPrimary(props) {
           })}
         </Select>
       </div>
-      <p className={props.errorClass}>{props.error}</p>
+      {props.error && <p className={props.errorClass}>{props.error}</p>}
     </div>
   );
 }

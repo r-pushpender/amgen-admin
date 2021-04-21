@@ -100,7 +100,8 @@ function AddAdmin() {
             <div className="col-sm-6 mt--20">
               <SelectPrimary
                 lable="Access Level"
-                options={["Choose", "test1", "test2", "test3"]}
+                placeholder="choose"
+                options={["test1", "test2", "test3"]}
               />
             </div>
           </div>

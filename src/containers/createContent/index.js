@@ -28,7 +28,8 @@ function CreateContent() {
             <div className="col-sm-6">
               <SelectPrimary
                 lable="Category"
-                options={["Choose", "test1", "test2", "test3"]}
+                placeholder="Choose"
+                options={["test1", "test2", "test3"]}
               />
             </div>
           </div>

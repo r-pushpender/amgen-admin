@@ -91,14 +91,14 @@ function MainContainer(props) {
             <NavLink
               className="navlink"
               activeClassName="active"
-              to="/add-admin"
+              to="/admins"
             >
               <FaShieldAlt className="icon" /> Admins
             </NavLink>
             <NavLink
               className="navlink"
               activeClassName="active"
-              to="/create-content"
+              to="/content-listing"
             >
               <FaRegImage className="icon" /> Content
             </NavLink>
@@ -127,13 +127,19 @@ function MainContainer(props) {
           </nav>
         </div>
         <div className="content-section col-right">
-          <div className="info-section">
-            <button className="back-button">
-              <FaLongArrowAltLeft />
-              <span> Back</span>
-            </button>
-            <h4 className="title-page">{props.pageTitle}</h4>
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="info-section">
+                <button className="back-button">
+                  <FaLongArrowAltLeft />
+                  <span> Back</span>
+                </button>
+                <h4 className="title-page">{props.pageTitle}</h4>
+              </div>
+            </div>
+            <div className="col-sm-6">{props.rightSection}</div>
           </div>
+
           {props.children}
         </div>
       </div>

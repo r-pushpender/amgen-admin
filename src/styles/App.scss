@@ -1,15 +1,15 @@
 // variables
-@import './variables/colors';
-@import './variables/mixins';
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "./variables/colors";
+@import "./variables/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
 
 // theme styles files
-@import './xtras';
-@import './fonts';
+@import "./xtras";
+@import "./fonts";
 
 // custom css
 * {
-  font-family: 'Work Sans', sans-serif !important;
+  font-family: "Work Sans", sans-serif !important;
 }
 
 *,
@@ -94,13 +94,12 @@ body {
 .description {
   font-size: 16px;
   line-height: 24px;
-  color: #5A607F;
+  color: #5a607f;
 
   &.description-sm {
     font-size: 14px;
   }
 }
-
 
 // carousel foucs
 .outline-none {
@@ -145,16 +144,17 @@ body {
   text-decoration: none !important;
 }
 
-
 input {
-  &::-webkit-input-placeholder { /* Edge */
+  &::-webkit-input-placeholder {
+    /* Edge */
     color: $placeholderText !important;
   }
-  
-  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: $placeholderText !important;
   }
-  
+
   &::placeholder {
     color: $placeholderText !important;
   }
@@ -168,10 +168,120 @@ input {
   margin-bottom: 80px;
 }
 
+// search box
+.search-box {
+  .ant-input-group {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  input {
+    border: none;
+    margin-left: 24px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &.border-style {
+    border: 1px solid #d9e1ec;
+    overflow: hidden;
+    border-radius: 4px;
+    min-height: 38px;
+
+    .ant-input {
+      height: 38px;
+    }
+
+    .ant-btn {
+      height: 38px;
+    }
+  }
+}
+
+// ant-pagination
+.ant-pagination {
+  align-items: center;
+  margin: 55px 0 20px !important;
+
+  .ant-pagination-item-link {
+    border: none;
+  }
+
+  .ant-pagination-item {
+    border: none;
+    line-height: 1;
+    height: auto;
+  }
+
+  .ant-pagination-item-active {
+    background: #ecf2ff;
+    border-radius: 4px;
+    color: $theme-primary;
+  }
+
+  .ant-pagination-prev {
+    position: relative;
+    opacity: 0.4;
+
+    button {
+      display: none;
+    }
+
+    &::after {
+      display: inline-block;
+      content: "";
+      background: url("../assets/images/arrow-left.svg");
+      width: 14px;
+      height: 14px;
+      margin-right: 23px;
+    }
+  }
+
+  .ant-pagination-next {
+    position: relative;
+    opacity: 0.4;
+
+    button {
+      display: none;
+    }
+    &::after {
+      display: inline-block;
+      content: "";
+      background: url("../assets/images/arrow-right.svg");
+      width: 14px;
+      height: 14px;
+      margin-left: 23px;
+    }
+  }
+
+  .ant-pagination-disabled {
+    opacity: 0.2;
+  }
+
+  &.ant-table-pagination-right {
+    justify-content: flex-start;
+  }
+}
 
 // Container size
 // .container {
-//   @media (min-width: 1600px) { 
+//   @media (min-width: 1600px) {
 //     max-width: 95%;
 //    }
 // }

@@ -1,7 +1,7 @@
 @import "../../styles/variables/colors";
 @import "../../styles/variables/mixins";
 
-.create-content-style {
+.admins-style {
 
   .card {
     padding: 28px;
@@ -40,10 +40,15 @@
       margin-bottom: 0;
     }
 
+    .title5 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
     .img-box {
       width: 48px;
       height: 48px;
-      border-radius: 4px;
+      border-radius: 50px;
       margin-right: 16px;
       position: relative;
       overflow: hidden;
@@ -53,6 +58,19 @@
         height: 100%;
         position: absolute;
         object-fit: cover;
+      }
+    }
+  }
+
+  // edit-section
+  .edit-section {
+
+    button {
+      color: $theme-primary;
+      border-color: #D7DAEC;
+
+      &:first-child {
+        margin-right: 12px;
       }
     }
   }
