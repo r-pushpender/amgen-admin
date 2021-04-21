@@ -75,12 +75,7 @@ function MainContainer(props) {
       <div className="row-container">
         <div className="dark-style col-left">
           <Nav className="flex-column">
-            <NavLink
-              className="navlink"
-              activeClassName="active"
-              exact
-              to="/"
-            >
+            <NavLink className="navlink" activeClassName="active" exact to="/">
               <FaMicrosoft className="icon" /> Dashboard
             </NavLink>
             <NavLink

@@ -26,6 +26,7 @@
   &.active {
     border-color: $theme-primary;
     color: $theme-primary;
+    background-color: $white;
 
     .description {
       color: $theme-primary;
