@@ -1,9 +1,9 @@
-import ButtonOutline from "../../components/buttons/buttonOutline";
-import email from "../../assets/images/email.svg";
+import InfoMessage from "../../../components/infoMessage";
+import ButtonOutline from "../../../components/buttons/buttonOutline";
+import email from "../../../assets/images/email.svg";
 
 // Styles
 import "./styles.scss";
-import InfoMessage from "../../components/infoMessage";
 
 function EmailSent() {
   return (

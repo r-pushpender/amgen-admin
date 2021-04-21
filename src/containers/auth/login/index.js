@@ -1,14 +1,20 @@
-import {Link} from "react-router-dom";
-import logoImage from "../../assets/images/logo.png";
-import ButtonPrimary from "../../components/buttons/buttonPrimary";
-import CheckboxPrimary from "../../components/checkboxPrimary";
-import InfoMessage from "../../components/infoMessage";
-import InputPrimary from "../../components/inputPrimary";
+import {Link, useHistory} from "react-router-dom";
+import logoImage from "../../../assets/images/logo.png";
+import ButtonPrimary from "../../../components/buttons/buttonPrimary";
+import CheckboxPrimary from "../../../components/checkboxPrimary";
+import InfoMessage from "../../../components/infoMessage";
+import InputPrimary from "../../../components/inputPrimary";
 
 // Styles
 import "./styles.scss";
 
 function Login() {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/create-content");
+  }
+
   return (
     <div className="login-page-style">
       <div className="container">
@@ -23,12 +29,14 @@ function Login() {
               <div className="form-section mt--45">
                 <InputPrimary placeholder="Enter Email Address" lable="Email" />
                 <InputPrimary placeholder="Enter Password" lable="Password" />
-                <CheckboxPrimary label="Keep me signed in"/>
+                <CheckboxPrimary label="Keep me signed in" />
 
-                <ButtonPrimary title="Sign In" />
+                <ButtonPrimary title="Sign In" onClick={handleClick} />
 
                 <div className="text-center mt--25">
-                  <Link className="btn-link" to="/password-reset">Forgot your password?</Link>
+                  <Link className="btn-link" to="/password-reset">
+                    Forgot your password?
+                  </Link>
                 </div>
               </div>
             </div>
@@ -36,7 +44,7 @@ function Login() {
         </div>
       </div>
 
-      <InfoMessage/>
+      <InfoMessage />
     </div>
   );
 }

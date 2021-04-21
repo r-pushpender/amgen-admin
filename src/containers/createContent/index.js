@@ -3,6 +3,7 @@ import ButtonPrimary from "../../components/buttons/buttonPrimary";
 import HtmlEditor from "../../components/htmlEditor";
 import InputPrimary from "../../components/inputPrimary";
 import MainContainer from "../../components/mainContainer";
+import SelectPrimary from "../../components/selectPrimary";
 import UploadFile from "../../components/uploadFile";
 
 // Styles
@@ -25,7 +26,10 @@ function CreateContent() {
               <InputPrimary placeholder="" lable="Title" />
             </div>
             <div className="col-sm-6">
-              <InputPrimary placeholder="" lable="Category" />
+              <SelectPrimary
+                lable="Category"
+                options={["Choose", "test1", "test2", "test3"]}
+              />
             </div>
           </div>
 
@@ -43,7 +47,7 @@ function CreateContent() {
             </div>
           </div>
         </div>
-        
+
         <div className="divider" />
 
         <div className="row">

@@ -1,0 +1,36 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.select-style {
+  .select-custom {
+    background: $white;
+    border: 1px solid #d9e1ec;
+    height: 48px;
+    border-radius: 4px;
+    padding: 0 10px;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    select {
+      border: none;
+      background: none;
+      min-width: 100%;
+      height: 40px;
+      opacity: 0.6;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .label-style {
+    font-size: 14px;
+    color: $black;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+}

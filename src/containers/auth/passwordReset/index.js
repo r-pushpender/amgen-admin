@@ -1,11 +1,11 @@
 import {useHistory} from "react-router-dom";
-import ButtonPrimary from "../../components/buttons/buttonPrimary";
-import ButtonOutline from "../../components/buttons/buttonOutline";
-import InputPrimary from "../../components/inputPrimary";
+import ButtonPrimary from "../../../components/buttons/buttonPrimary";
+import ButtonOutline from "../../../components/buttons/buttonOutline";
+import InputPrimary from "../../../components/inputPrimary";
+import InfoMessage from "../../../components/infoMessage";
 
 // Styles
 import "./styles.scss";
-import InfoMessage from "../../components/infoMessage";
 
 function PasswordReset() {
   let history = useHistory();

@@ -1,9 +1,10 @@
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import ConfirmSignin from "./containers/confirmSignin";
+import Login from "./containers/auth/login";
+import ConfirmSignin from "./containers/auth/confirmSignin";
+import EmailSent from "./containers/auth/emailSent";
+import PasswordReset from "./containers/auth/passwordReset";
 import CreateContent from "./containers/createContent";
-import EmailSent from "./containers/emailSent";
-import Login from "./containers/login";
-import PasswordReset from "./containers/passwordReset";
+import AddAdmin from "./containers/addAdmin";
 
 function AppRouter() {
   return (
@@ -15,6 +16,7 @@ function AppRouter() {
           <Route exact path="/confirm-signin" component={ConfirmSignin} />
           <Route exact path="/email-sent" component={EmailSent} />
           <Route exact path="/create-content" component={CreateContent} />
+          <Route exact path="/add-admin" component={AddAdmin} />
         </Switch>
       </BrowserRouter>
     </div>
