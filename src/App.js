@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import AppRouter from "./AppRouter";
+import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Styles

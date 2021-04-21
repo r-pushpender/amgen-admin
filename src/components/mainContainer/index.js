@@ -1,11 +1,4 @@
-import {
-  Form,
-  Nav,
-  Button,
-  FormControl,
-  DropdownButton,
-  Dropdown,
-} from "react-bootstrap";
+import {Input, Menu, Dropdown} from "antd";
 import {
   FaBell,
   FaChartBar,
@@ -14,37 +7,55 @@ import {
   FaMicrosoft,
   FaRegCalendarAlt,
   FaRegImage,
-  FaSearch,
   FaShieldAlt,
   FaUserFriends,
   FaYelp,
+  FaChevronDown,
 } from "react-icons/fa";
-import {NavLink} from "react-router-dom";
-import logoImage from "../../assets/images/logo.png";
+import {Link, NavLink} from "react-router-dom";
+import logoImage from "../../assets/images/logo.svg";
 
 // Styles
 import "./styles.scss";
 
+const {Search} = Input;
+
 function MainContainer(props) {
+  const onSearch = (value) => console.log(value);
+
+  const menu = (
+    <Menu>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" href="#">
+          1st item
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.luohanacademy.com"
+        >
+          2nd item
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <main className="main-container-style">
       <div className="navigation">
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-sm-2">
-              <img src={logoImage} className="logo" />
+              <Link to="/">
+                <img src={logoImage} className="logo" />
+              </Link>
             </div>
             <div className="col-sm-4">
-              <Form inline className="search-box-style">
-                <FormControl
-                  type="text"
-                  placeholder="Search..."
-                  className="mr-sm-2"
-                />
-                <Button className="searchIcon">
-                  <FaSearch />
-                </Button>
-              </Form>
+              <div className="search-box">
+                <Search placeholder="Search..." onSearch={onSearch} />
+              </div>
             </div>
             <div className="col-sm-6">
               <div className="flex-section">
@@ -57,15 +68,14 @@ function MainContainer(props) {
                   <div className="img">
                     <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80" />
                   </div>
-                  <DropdownButton
-                    id="dropdown-item-button"
-                    title="Monica Simons"
-                  >
-                    <Dropdown.ItemText>Item 1</Dropdown.ItemText>
-                    <Dropdown.Item as="button">Item 2</Dropdown.Item>
-                    <Dropdown.Item as="button">Item 3</Dropdown.Item>
-                    <Dropdown.Item as="button">Item 4</Dropdown.Item>
-                  </DropdownButton>
+                  <Dropdown overlay={menu}>
+                    <a
+                      className="ant-dropdown-link"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      Monica Simons <FaChevronDown className="icon" />
+                    </a>
+                  </Dropdown>
                 </div>
               </div>
             </div>
@@ -74,7 +84,7 @@ function MainContainer(props) {
       </div>
       <div className="row-container">
         <div className="dark-style col-left">
-          <Nav className="flex-column">
+          <nav className="flex-column">
             <NavLink className="navlink" activeClassName="active" exact to="/">
               <FaMicrosoft className="icon" /> Dashboard
             </NavLink>
@@ -114,7 +124,7 @@ function MainContainer(props) {
             <NavLink className="navlink" to="help">
               <FaInfoCircle className="icon" /> Help
             </NavLink>
-          </Nav>
+          </nav>
         </div>
         <div className="content-section col-right">
           <div className="info-section">

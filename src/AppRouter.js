@@ -5,6 +5,7 @@ import EmailSent from "./containers/auth/emailSent";
 import PasswordReset from "./containers/auth/passwordReset";
 import CreateContent from "./containers/createContent";
 import AddAdmin from "./containers/addAdmin";
+import ContentListing from "./containers/contentListing";
 
 function AppRouter() {
   return (
@@ -17,6 +18,7 @@ function AppRouter() {
           <Route exact path="/email-sent" component={EmailSent} />
           <Route exact path="/create-content" component={CreateContent} />
           <Route exact path="/add-admin" component={AddAdmin} />
+          <Route exact path="/content-listing" component={ContentListing}/>
         </Switch>
       </BrowserRouter>
     </div>

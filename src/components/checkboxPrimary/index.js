@@ -1,13 +1,14 @@
 // Styles
-import { Form } from "react-bootstrap";
+import {Checkbox} from "antd";
 import "./styles.scss";
 
 function CheckboxPrimary(props) {
+  function onChange(e) {
+    console.log(`checked = ${e.target.checked}`);
+  }
   return (
     <div className={`checkbox-style ${props.checkboxStyle}`}>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label={props.label} />
-      </Form.Group>
+      <Checkbox onChange={onChange}>{props.label}</Checkbox>
     </div>
   );
 }

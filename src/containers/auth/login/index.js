@@ -1,5 +1,5 @@
 import {Link, useHistory} from "react-router-dom";
-import logoImage from "../../../assets/images/logo.png";
+import logoImage from "../../../assets/images/logo.svg";
 import ButtonPrimary from "../../../components/buttons/buttonPrimary";
 import CheckboxPrimary from "../../../components/checkboxPrimary";
 import InfoMessage from "../../../components/infoMessage";
@@ -28,10 +28,12 @@ function Login() {
 
               <div className="form-section mt--45">
                 <InputPrimary placeholder="Enter Email Address" label="Email" />
+                
                 <InputPrimary placeholder="Enter Password" label="Password" />
+
                 <CheckboxPrimary label="Keep me signed in" />
 
-                <ButtonPrimary title="Sign In" onClick={handleClick} />
+                <ButtonPrimary title="Sign In" onClick={handleClick}  btnStyle="mt--15"/>
 
                 <div className="text-center mt--25">
                   <Link className="btn-link" to="/password-reset">
