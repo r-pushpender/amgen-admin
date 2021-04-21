@@ -148,15 +148,15 @@ body {
 
 input {
   &::-webkit-input-placeholder { /* Edge */
-    color: $placeholderText;
+    color: $placeholderText !important;
   }
   
   &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: $placeholderText;
+    color: $placeholderText !important;
   }
   
   &::placeholder {
-    color: $placeholderText;
+    color: $placeholderText !important;
   }
 }
 
