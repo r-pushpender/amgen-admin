@@ -12,7 +12,7 @@ import "./styles.scss";
 function CreateContent() {
   return (
     <div className="create-content-style">
-      <MainContainer pageTitle="Add Content">
+      <MainContainer pageTitle="Add Content" backButton>
         <div className="card">
           <div className="info-content">
             <h4 className="title4">Basic Information</h4>

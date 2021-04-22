@@ -119,7 +119,7 @@ function Admins() {
         <div className="card">
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="Admins" key="1">
-              <div className="d-flex align-items-center justify-content-between">
+              <div className="action-section">
                 <div className="input-section">
                   <SelectPrimary
                     inputStyle="select-style"

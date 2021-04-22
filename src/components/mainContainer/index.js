@@ -1,3 +1,4 @@
+import {Link, NavLink, useHistory} from "react-router-dom";
 import {Input, Menu, Dropdown} from "antd";
 import {
   FaBell,
@@ -12,7 +13,6 @@ import {
   FaYelp,
   FaChevronDown,
 } from "react-icons/fa";
-import {Link, NavLink} from "react-router-dom";
 import logoImage from "../../assets/images/logo.svg";
 
 // Styles
@@ -22,6 +22,7 @@ const {Search} = Input;
 
 function MainContainer(props) {
   const onSearch = (value) => console.log(value);
+  let history = useHistory();
 
   const menu = (
     <Menu>
@@ -130,10 +131,10 @@ function MainContainer(props) {
           <div className="row">
             <div className="col-sm-6">
               <div className="info-section">
-                <button className="back-button">
+                {props.backButton && <button className="back-button" onClick={() => history.goBack()}>
                   <FaLongArrowAltLeft />
                   <span> Back</span>
-                </button>
+                </button>}
                 <h4 className="title-page">{props.pageTitle}</h4>
               </div>
             </div>

@@ -2,7 +2,6 @@
 @import "../../styles/variables/mixins";
 
 .admins-style {
-
   .card {
     padding: 28px;
     border: none;
@@ -15,10 +14,16 @@
     margin: 40px 0 30px;
   }
 
+  .action-section {
+    margin: 20px 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .input-section {
     display: flex;
     align-items: flex-start;
-    margin: 20px 0 36px;
 
     .select-style {
       min-width: 180px;
@@ -64,10 +69,9 @@
 
   // edit-section
   .edit-section {
-
     button {
       color: $theme-primary;
-      border-color: #D7DAEC;
+      border-color: #d7daec;
 
       &:first-child {
         margin-right: 12px;

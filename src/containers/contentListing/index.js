@@ -1,5 +1,5 @@
 import {Tabs, Table, Switch, Tag, Input} from "antd";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 import ButtonOutline from "../../components/buttons/buttonOutline";
 import ButtonPrimary from "../../components/buttons/buttonPrimary";
 import MainContainer from "../../components/mainContainer";
@@ -130,7 +130,11 @@ function ContentListing() {
         rightSection={
           <div className="d-flex justify-content-end">
             <ButtonOutline title="Export" btnStyle="mr--10 sm" />
-            <ButtonPrimary title="+ Add Content" btnStyle="sm" onClick={handleContent} />
+            <ButtonPrimary
+              title="+ Add Content"
+              btnStyle="sm"
+              onClick={handleContent}
+            />
           </div>
         }
       >

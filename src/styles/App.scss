@@ -279,6 +279,28 @@ input {
   }
 }
 
+// ant-tabs-tab-btn
+.ant-tabs-tab-btn {
+  color: #7f84a3;
+}
+
+.ant-switch {
+  background: #d9e4ff;
+
+  &.ant-switch-checked {
+    background: $theme-primary;
+  }
+}
+
+
+// table th color
+.ant-table-thead {
+
+  th {
+    color: rgba($theme-secondary, 0.7) !important;
+  }
+}
+
 // Container size
 // .container {
 //   @media (min-width: 1600px) {

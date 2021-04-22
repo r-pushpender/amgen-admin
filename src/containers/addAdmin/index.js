@@ -39,7 +39,7 @@ function AddAdmin() {
   console.log(adminRole)
   return (
     <div className="create-content-style">
-      <MainContainer pageTitle="Add Admin">
+      <MainContainer pageTitle="Add Admin" backButton>
         <div className="card">
           <div className="info-content">
             <h4 className="title4">Basic Information</h4>
