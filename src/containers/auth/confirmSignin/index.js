@@ -23,7 +23,7 @@ function ConfirmSignin(props) {
 
   useEffect(() => {
     if (!props.user.email) {
-      //history.replace('/')
+      history.replace('/')
     }
   }, [])
 

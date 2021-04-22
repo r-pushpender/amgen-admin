@@ -5,9 +5,20 @@ import { Redirect, Route } from 'react-router';
 const ProtectedRoute = (props) => {
     return (
         props.user?.details?.auth_token ?
-            <Route {...props} />
+            (
+                props?.isProtected ?
+                    <Route {...props} />
+                    :
+                    <Redirect to='/admins' />
+            )
             :
-            <Redirect to='/' />
+            (
+                props?.isProtected ?
+                    <Redirect to='/' />
+                    :
+                    <Route {...props} />
+            )
+
     );
 }
 
