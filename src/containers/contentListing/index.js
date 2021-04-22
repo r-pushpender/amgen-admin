@@ -59,7 +59,7 @@ function ContentListing() {
           </div>
         </div>
       ),
-      category: <Tag color="#f50">Managing Osteoporosis</Tag>,
+      category: <Tag className="green-tag">Managing Osteoporosis</Tag>,
       reads: "1.2k",
       datePublished: "22 Oct, 2020",
       visibility: <Switch defaultChecked onChange={toggleChange} />,
@@ -79,7 +79,7 @@ function ContentListing() {
           </div>
         </div>
       ),
-      category: <Tag color="#f50">Complications</Tag>,
+      category: <Tag className="blue-tag">Complications</Tag>,
       reads: "1.2k",
       datePublished: "24 May, 2020",
       visibility: <Switch defaultChecked onChange={toggleChange} />,
@@ -99,7 +99,7 @@ function ContentListing() {
           </div>
         </div>
       ),
-      category: <Tag color="#f50">About Osteoporosis</Tag>,
+      category: <Tag className="warning-tag">About Osteoporosis</Tag>,
       reads: "1.2k",
       datePublished: "1 Feb, 2020",
       visibility: <Switch defaultChecked onChange={toggleChange} />,
