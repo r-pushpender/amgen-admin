@@ -1,6 +1,7 @@
 import { handleError } from '../../utils/logger/errorHandler';
 import UserApi from '../../services/api/login';
 import * as UserActionCreators from './actionCreators';
+import { toast } from 'react-toastify';
 
 export const login = (
   payload
@@ -12,7 +13,7 @@ export const login = (
       dispatch(UserActionCreators.setUserEmail(payload?.email));
     }
     else {
-      console.log("Invalid login");
+      toast.error(response?.error_message);
     }
     return response;
   } catch (err) {

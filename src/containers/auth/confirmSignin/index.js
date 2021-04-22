@@ -62,7 +62,7 @@ function ConfirmSignin(props) {
               >
                 {({ values, setFieldValue, submitForm }) => (
                   <div className="form-section mt--45">
-                    <div>{JSON.stringify(values)}</div>
+                    {/* <div>{JSON.stringify(values)}</div> */}
                     <div className="mb-20">
                       <Field
                         component={InputPrimary}
