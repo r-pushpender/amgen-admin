@@ -1,4 +1,6 @@
+import { storage } from '../../services/config/storage';
+
 export const initialState = {
     email: null,
-    details: null,
+    details: storage.fetch.authToken() || null,
 }

@@ -18,7 +18,7 @@ function ConfirmSignin(props) {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/create-content");
+    history.replace("/create-content");
   }
 
   useEffect(() => {
