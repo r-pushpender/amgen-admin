@@ -6,3 +6,10 @@ export function setUserEmail(payload) {
         payload,
     };
 }
+
+export function setUserDetails(payload) {
+    return {
+        type: actionTypes.SET_USER_DETAILS,
+        payload,
+    }
+}

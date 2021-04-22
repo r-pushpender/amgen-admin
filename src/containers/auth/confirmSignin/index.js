@@ -20,7 +20,7 @@ function ConfirmSignin(props) {
 
   useEffect(() => {
     if (!props.user.email) {
-      history.replace('/')
+      //history.replace('/')
     }
   }, [])
 
@@ -38,7 +38,8 @@ function ConfirmSignin(props) {
               </div>
               <Formik
                 initialValues={{
-                  otp: ""
+                  otp: "",
+                  email: props?.user?.email
                 }}
                 validationSchema={yup.object().shape({
                   otp: yup.number().typeError("OTP should be numeric.").required("OTP is required").test('otp', 'OTP should be of six digits', (otp) => otp?.toString()?.length == 6)
@@ -50,6 +51,7 @@ function ConfirmSignin(props) {
               >
                 {({ values, setFieldValue, submitForm }) => (
                   <div className="form-section mt--45">
+                    <div>{JSON.stringify(values)}</div>
                     <div className="mb-20">
                       <Field
                         component={InputPrimary}

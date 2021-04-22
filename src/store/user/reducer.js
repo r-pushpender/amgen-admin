@@ -7,6 +7,8 @@ export default function (state = initialState, action) {
     switch (type) {
         case actionTypes.SET_USER_EMAIL:
             return setUserEmail(state, payload);
+        case actionTypes.SET_USER_DETAILS:
+            return setUserDetails(state, payload);
         default:
             return state;
     }
@@ -18,3 +20,10 @@ const setUserEmail = (state, payload) => {
         email: payload,
     };
 };
+
+const setUserDetails = (state, payload) => {
+    return {
+        ...state,
+        details: payload,
+    }
+}

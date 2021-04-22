@@ -19,3 +19,22 @@ export const login = (
     handleError(err);
   }
 };
+
+export const verifyOtp = (
+  payload
+) => async (dispatch) => {
+  try {
+    const response = await UserApi.verifyOtp(payload);
+    if (response && !response?.error_message) {
+      console.log("Success", response);
+      dispatch(UserActionCreators.setUserDetails(response));
+    }
+    else {
+      console.log("Invalid verify");
+    }
+    return response;
+  } catch (err) {
+    handleError(err);
+  }
+};
+
