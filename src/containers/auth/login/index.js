@@ -4,12 +4,16 @@ import ButtonPrimary from "../../../components/buttons/buttonPrimary";
 import CheckboxPrimary from "../../../components/checkboxPrimary";
 import InfoMessage from "../../../components/infoMessage";
 import InputPrimary from "../../../components/inputPrimary";
-import { Formik, Field } from "formik";
+import { Formik, Field, ErrorMessage } from "formik";
+import * as UserActions from '../../../store/user/actions';
+import * as yup from 'yup';
 
 // Styles
 import "./styles.scss";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-function Login() {
+function Login(props) {
   let history = useHistory();
 
   function handleClick() {
@@ -30,29 +34,41 @@ function Login() {
               <Formik
                 enableReinitialize
                 initialValues={{
-                  username: "",
+                  email: "",
+                  password: "",
+                  user_type: 1,
                 }}
-                onSubmit={() => {
-                  console.log("submit");
-                  handleClick();
+                validationSchema={yup.object().shape({
+                  email: yup.string().email().required("Email is required"),
+                  password: yup.string().required("Password is required"),
+                })}
+                onSubmit={async (values) => {
+                  console.log(values);
+                  const response = await props.login(values);
+                  console.log(response);
+                  if (response?.success) {
+                    handleClick();
+                  }
+                  else {
+                    console.log("Incorrect username or password");
+                  }
                 }}
               >
                 {({ values, setFieldValue, submitForm }) => (
                   <form>
-                    {/* <div>{JSON.stringify(values)}</div> */}
+                    <div>{JSON.stringify(values)}</div>
                     <div className="form-section mt--45">
                       <Field
                         component={InputPrimary}
-                        name="username"
-                        value={values.username}
-                        placeholder="Enter your username"
-                        label="Username"
-                      />
-                      <InputPrimary
+                        name="email"
+                        value={values.email}
                         placeholder="Enter Email Address"
                         label="Email"
                       />
-                      <InputPrimary
+                      <Field
+                        component={InputPrimary}
+                        name="password"
+                        value={values.password}
                         placeholder="Enter Password"
                         label="Password"
                       />
@@ -83,4 +99,15 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: bindActionCreators(UserActions.login, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

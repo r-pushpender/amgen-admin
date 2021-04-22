@@ -1,6 +1,10 @@
 import { Input } from "antd";
+import { Typography } from 'antd';
+import { ErrorMessage } from 'formik';
 // Styles
 import "./styles.scss";
+
+const { Text } = Typography;
 
 function InputPrimary({
   field, // { name, value, onChange, onBlur } For future use.
@@ -11,7 +15,10 @@ function InputPrimary({
     <div className={`input-style ${props.inputStyle}`}>
       <div className={`label-style ${props.labelStyle}`}>{props.label}</div>
       <Input placeholder={props.placeholder} {...field} />
-      <p className={props.errorClass}>{props.error}</p>
+      <ErrorMessage
+        name={`${field?.name}`}
+        render={(msg) => <Text type='danger'>{msg}</Text>}
+      />
     </div>
   );
 }

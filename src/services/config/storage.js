@@ -26,7 +26,7 @@ const fetch = {
       try {
         const decoded = JSON.parse(data);
         return decoded.auth_token;
-      } catch (err) {}
+      } catch (err) { }
     }
   },
 };

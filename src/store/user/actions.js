@@ -1,16 +1,11 @@
-import { handleError } from '../../../utils/logger/errorHandler';
+import { handleError } from '../../utils/logger/errorHandler';
 import UserApi from '../../services/api/login';
 
 export const login = (
   payload
 ) => async (dispatch) => {
   try {
-    const response = await UserApi.login(
-      {
-        ...payload,
-        user_type: 1
-      }
-    );
+    const response = await UserApi.login(payload);
     if (response?.success) {
       console.log("Success", response?.text);
     }
