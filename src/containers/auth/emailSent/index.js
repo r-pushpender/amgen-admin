@@ -13,7 +13,7 @@ function EmailSent() {
           <div className="col-sm-6">
             <div className="auth-box">
               <div className="info-section">
-                <img src={email} className="imageStyle"/>
+                <img src={email} className="imageStyle" alt=""/>
                 <h4 className="title1">Reset link sent!</h4>
                 <div className="description mt--10">
                   Check your inbox to change your password

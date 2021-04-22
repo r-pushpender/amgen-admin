@@ -241,7 +241,7 @@ export const uuid = () => {
 };
 
 export const getVerifiedCheck = (
-  <img className="ml-10" src="/img/green-check-mark.svg" />
+  <img className="ml-10" src="/img/green-check-mark.svg" alt="" />
 );
 
 export const mergeOptions = (

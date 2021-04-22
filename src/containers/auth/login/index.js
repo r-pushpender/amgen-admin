@@ -41,7 +41,7 @@ function Login(props) {
           <div className="col-sm-6">
             <div className="auth-box">
               <div className="info-section">
-                <img src={logoImage} className="logo-img" />
+                <img src={logoImage} className="logo-img" alt="" />
                 <h4 className="title3">Sign In</h4>
               </div>
 
