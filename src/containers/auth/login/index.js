@@ -56,22 +56,27 @@ function Login(props) {
               >
                 {({ values, setFieldValue, submitForm }) => (
                   <form>
-                    <div>{JSON.stringify(values)}</div>
+                    {/* <div>{JSON.stringify(values)}</div> */}
                     <div className="form-section mt--45">
-                      <Field
-                        component={InputPrimary}
-                        name="email"
-                        value={values.email}
-                        placeholder="Enter Email Address"
-                        label="Email"
-                      />
-                      <Field
-                        component={InputPrimary}
-                        name="password"
-                        value={values.password}
-                        placeholder="Enter Password"
-                        label="Password"
-                      />
+                      <div className="mb-20">
+                        <Field
+
+                          component={InputPrimary}
+                          name="email"
+                          value={values.email}
+                          placeholder="Enter Email Address"
+                          label="Email"
+                        />
+                      </div>
+                      <div className="mb-20">
+                        <Field
+                          component={InputPrimary}
+                          name="password"
+                          value={values.password}
+                          placeholder="Enter Password"
+                          label="Password"
+                        />
+                      </div>
                       <CheckboxPrimary label="Keep me signed in" />
 
                       <ButtonPrimary

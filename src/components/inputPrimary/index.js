@@ -15,10 +15,10 @@ function InputPrimary({
     <div className={`input-style ${props.inputStyle}`}>
       <div className={`label-style ${props.labelStyle}`}>{props.label}</div>
       <Input placeholder={props.placeholder} {...field} />
-      <ErrorMessage
+      {field ? <ErrorMessage
         name={`${field?.name}`}
         render={(msg) => <Text type='danger'>{msg}</Text>}
-      />
+      /> : null}
     </div>
   );
 }
