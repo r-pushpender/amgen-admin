@@ -3,14 +3,16 @@ const LS_KEY = {
 };
 let storageType = checkStorage();
 function checkStorage() {
-  window.localStorage.setItem('ex-fg', 'check');
-  if (window.localStorage.getItem('ex-fg')) return 'localStorage';
-  else return 'sessionStorage';
+  if (!window.localStorage.getItem('ex-fg')) {
+    window.localStorage.setItem('ex-fg', 'check');
+  }
+  if (window.localStorage.getItem('ex-fg')) return sessionStorage;
+  else return localStorage;
 }
 
 const set = {
   authToken: (data) => {
-    localStorage.setItem(
+    checkStorage().setItem(
       LS_KEY.auth_token,
       JSON.stringify({
         auth_token: data,
@@ -21,7 +23,7 @@ const set = {
 
 const fetch = {
   authToken: () => {
-    const data = localStorage.getItem(LS_KEY.auth_token);
+    const data = checkStorage().getItem(LS_KEY.auth_token);
     if (data) {
       try {
         const decoded = JSON.parse(data);
@@ -33,7 +35,7 @@ const fetch = {
 
 const destroy = {
   authToken: () => {
-    localStorage.removeItem(LS_KEY.auth_token);
+    checkStorage().removeItem(LS_KEY.auth_token);
   },
 };
 

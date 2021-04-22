@@ -32,6 +32,7 @@ const setUserDetails = (state, payload) => {
 
 const resetUser = () => {
     return {
-        ...initialState
+        email: null,
+        details: null,
     }
 }
