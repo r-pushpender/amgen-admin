@@ -1,10 +1,10 @@
 import { Link, useHistory } from "react-router-dom";
-import logoImage from "../../../assets/images/logo.png";
+import logoImage from "../../../assets/images/logo.svg";
 import ButtonPrimary from "../../../components/buttons/buttonPrimary";
 import CheckboxPrimary from "../../../components/checkboxPrimary";
 import InfoMessage from "../../../components/infoMessage";
 import InputPrimary from "../../../components/inputPrimary";
-import { Formik, Field } from 'formik';
+import { Formik, Field } from "formik";
 
 // Styles
 import "./styles.scss";
@@ -30,7 +30,7 @@ function Login() {
               <Formik
                 enableReinitialize
                 initialValues={{
-                  username: ''
+                  username: "",
                 }}
                 onSubmit={() => {
                   console.log("submit");
@@ -45,13 +45,24 @@ function Login() {
                         component={InputPrimary}
                         name="username"
                         value={values.username}
-                        placeholder="Enter your username" label="Username"
+                        placeholder="Enter your username"
+                        label="Username"
                       />
-                      <InputPrimary placeholder="Enter Email Address" label="Email" />
-                      <InputPrimary placeholder="Enter Password" label="Password" />
+                      <InputPrimary
+                        placeholder="Enter Email Address"
+                        label="Email"
+                      />
+                      <InputPrimary
+                        placeholder="Enter Password"
+                        label="Password"
+                      />
                       <CheckboxPrimary label="Keep me signed in" />
 
-                      <ButtonPrimary title="Sign In" onClick={() => submitForm()} />
+                      <ButtonPrimary
+                        title="Sign In"
+                        onClick={() => submitForm()}
+                        btnStyle="mt--15"
+                      />
 
                       <div className="text-center mt--25">
                         <Link className="btn-link" to="/password-reset">

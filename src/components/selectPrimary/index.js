@@ -1,23 +1,52 @@
+import {Select} from "antd";
+
 // Styles
 import "./styles.scss";
 
 function SelectPrimary(props) {
+  const {Option} = Select;
+
+  function onChange(value) {
+    console.log(`selected ${value}`);
+  }
+
+  function onBlur() {
+    console.log("blur");
+  }
+
+  function onFocus() {
+    console.log("focus");
+  }
+
+  function onSearch(val) {
+    console.log("search:", val);
+  }
   return (
     <div className={`select-style ${props.inputStyle}`}>
-      <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
+      {props.lable && (
+        <div className={`label-style ${props.labelStyle}`}>{props.lable}</div>
+      )}
 
       <div className="select-custom">
-        <select name={props.field}>
+        <Select
+          showSearch
+          placeholder={props.placeholder}
+          optionFilterProp="children"
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onSearch={onSearch}
+          className="select"
+          filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
+        >
           {props.options.map((option) => {
-            return (
-              <option value={option} key={option}>
-                {option}
-              </option>
-            );
+            return <Option value={option}></Option>;
           })}
-        </select>
+        </Select>
       </div>
-      <p className={props.errorClass}>{props.error}</p>
+      {props.error && <p className={props.errorClass}>{props.error}</p>}
     </div>
   );
 }

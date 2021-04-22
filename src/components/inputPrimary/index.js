@@ -1,3 +1,4 @@
+import { Input } from "antd";
 // Styles
 import "./styles.scss";
 
@@ -9,29 +10,7 @@ function InputPrimary({
   return (
     <div className={`input-style ${props.inputStyle}`}>
       <div className={`label-style ${props.labelStyle}`}>{props.label}</div>
-      {props.type === "textarea" ? (
-        <div>
-          <textarea
-            row={props.row}
-            column={props.column}
-            placeholder={props.placeholder}
-            type={props.type}
-            {...field} //This has the props I pass from parent
-          />
-
-
-        </div>
-      ) : (
-        <div>
-          <input
-            placeholder={props.placeholder}
-            value={props.value}
-            onChange={props.onChange}
-            type={props.type}
-            {...field}
-          />
-        </div>
-      )}
+      <Input placeholder={props.placeholder} {...field} />
       <p className={props.errorClass}>{props.error}</p>
     </div>
   );

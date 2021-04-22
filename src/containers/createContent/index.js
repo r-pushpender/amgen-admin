@@ -12,7 +12,7 @@ import "./styles.scss";
 function CreateContent() {
   return (
     <div className="create-content-style">
-      <MainContainer pageTitle="Add Content">
+      <MainContainer pageTitle="Add Content" backButton>
         <div className="card">
           <div className="info-content">
             <h4 className="title4">Basic Information</h4>
@@ -23,12 +23,13 @@ function CreateContent() {
 
           <div className="row mt--25">
             <div className="col-sm-6">
-              <InputPrimary placeholder="" label="Title" />
+              <InputPrimary placeholder="" label="Title" inputStyle="input-md" />
             </div>
             <div className="col-sm-6">
               <SelectPrimary
                 lable="Category"
-                options={["Choose", "test1", "test2", "test3"]}
+                placeholder="Choose"
+                options={["test1", "test2", "test3"]}
               />
             </div>
           </div>

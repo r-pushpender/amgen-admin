@@ -39,7 +39,7 @@ function AddAdmin() {
   console.log(adminRole)
   return (
     <div className="create-content-style">
-      <MainContainer pageTitle="Add Admin">
+      <MainContainer pageTitle="Add Admin" backButton>
         <div className="card">
           <div className="info-content">
             <h4 className="title4">Basic Information</h4>
@@ -100,7 +100,8 @@ function AddAdmin() {
             <div className="col-sm-6 mt--20">
               <SelectPrimary
                 lable="Access Level"
-                options={["Choose", "test1", "test2", "test3"]}
+                placeholder="choose"
+                options={["test1", "test2", "test3"]}
               />
             </div>
           </div>
