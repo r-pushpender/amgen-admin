@@ -24,7 +24,7 @@ const rowSelection = {
 function Admins() {
   const columns = [
     {
-      title: "Content Title",
+      title: "Name",
       dataIndex: "contentTitle",
     },
     {
