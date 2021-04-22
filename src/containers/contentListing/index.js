@@ -49,7 +49,7 @@ function ContentListing() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" />
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="" />
           </div>
           <div className="text-section">
             <h5 className="title5">Osteoporosis quiz</h5>
@@ -69,7 +69,7 @@ function ContentListing() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2389&q=80" />
+            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2389&q=80" alt=""/>
           </div>
           <div className="text-section">
             <h5 className="title5">Osteoporosis quiz</h5>
@@ -89,7 +89,7 @@ function ContentListing() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt=""/>
           </div>
           <div className="text-section">
             <h5 className="title5">Osteoporosis quiz</h5>

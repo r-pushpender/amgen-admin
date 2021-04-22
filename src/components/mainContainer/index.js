@@ -50,7 +50,7 @@ function MainContainer(props) {
           <div className="row align-items-center">
             <div className="col-sm-2">
               <Link to="/">
-                <img src={logoImage} className="logo" />
+                <img src={logoImage} className="logo" alt="" />
               </Link>
             </div>
             <div className="col-sm-4">
@@ -67,7 +67,7 @@ function MainContainer(props) {
 
                 <div className="profile-dropdown">
                   <div className="img">
-                    <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80" />
+                    <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80" alt="" />
                   </div>
                   <Dropdown overlay={menu}>
                     <a

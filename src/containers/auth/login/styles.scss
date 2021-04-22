@@ -2,12 +2,12 @@
 @import "../../../styles/variables/mixins";
 
 .login-page-style {
-  // background: $gray-light;
   background-color: $gray-light;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   .logo-img {
     width: 110px;

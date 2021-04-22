@@ -1,4 +1,4 @@
-import {Tabs, Table, Button, Tag, Input} from "antd";
+import {Tabs, Table, Button, Input} from "antd";
 import {MdDelete, MdModeEdit} from "react-icons/md";
 import {useHistory} from "react-router";
 import ButtonOutline from "../../components/buttons/buttonOutline";
@@ -42,7 +42,7 @@ function Admins() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" />
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="" />
           </div>
           <div className="text-section">
             <h5 className="title5">Walter Gibson</h5>
@@ -57,7 +57,7 @@ function Admins() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" />
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="" />
           </div>
           <div className="text-section">
             <h5 className="title5">Lenora Robinson</h5>
@@ -72,7 +72,7 @@ function Admins() {
       contentTitle: (
         <div className="table-info-section">
           <div className="img-box">
-            <img src="https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+            <img src="https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" />
           </div>
           <div className="text-section">
             <h5 className="title5">Walter Gibson</h5>
@@ -87,11 +87,7 @@ function Admins() {
   function callback(key) {
     console.log(key);
   }
-
-  function toggleChange(checked) {
-    console.log(`switch to ${checked}`);
-  }
-
+  
   const {Search} = Input;
   const onSearch = (value) => console.log(value);
 
