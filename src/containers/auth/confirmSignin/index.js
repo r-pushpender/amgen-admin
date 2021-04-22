@@ -5,11 +5,14 @@ import InputPrimary from "../../../components/inputPrimary";
 import InfoMessage from "../../../components/infoMessage";
 import * as yup from 'yup';
 import React, { useEffect } from 'react';
+import * as UserActions from '../../../store/user/actions';
+import { storage } from '../../../services/config/storage';
 
 // Styles
 import "./styles.scss";
 import { Field, Formik } from "formik";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 function ConfirmSignin(props) {
   let history = useHistory();
@@ -44,9 +47,17 @@ function ConfirmSignin(props) {
                 validationSchema={yup.object().shape({
                   otp: yup.number().typeError("OTP should be numeric.").required("OTP is required").test('otp', 'OTP should be of six digits', (otp) => otp?.toString()?.length == 6)
                 })}
-                onSubmit={(values) => {
+                onSubmit={async (values) => {
                   console.log(values);
-                  handleClick();
+                  const response = await props.verifyOtp(values);
+                  if (response && !response?.error_message) {
+                    storage.set.authToken(response);
+                    handleClick();
+                  }
+                  else {
+                    console.log("Failed login");
+                  }
+
                 }}
               >
                 {({ values, setFieldValue, submitForm }) => (
@@ -89,8 +100,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (state) => {
-  return {}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    verifyOtp: bindActionCreators(UserActions.verifyOtp, dispatch),
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ConfirmSignin);
