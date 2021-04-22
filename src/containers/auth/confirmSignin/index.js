@@ -4,10 +4,12 @@ import ButtonOutline from "../../../components/buttons/buttonOutline";
 import InputPrimary from "../../../components/inputPrimary";
 import InfoMessage from "../../../components/infoMessage";
 import * as yup from 'yup';
+import React, { useEffect } from 'react';
 
 // Styles
 import "./styles.scss";
 import { Field, Formik } from "formik";
+import { connect } from "react-redux";
 
 function ConfirmSignin(props) {
   let history = useHistory();
@@ -15,6 +17,13 @@ function ConfirmSignin(props) {
   function handleClick() {
     history.push("/create-content");
   }
+
+  useEffect(() => {
+    if (!props.user.email) {
+      history.replace('/')
+    }
+  }, [])
+
   return (
     <div className="password-reset-style">
       <div className="container">
@@ -72,4 +81,14 @@ function ConfirmSignin(props) {
   );
 }
 
-export default ConfirmSignin;
+const mapStateToProps = (state) => {
+  return {
+    user: state.User
+  }
+}
+
+const mapDispatchToProps = (state) => {
+  return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConfirmSignin);
