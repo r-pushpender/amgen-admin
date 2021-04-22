@@ -1,5 +1,5 @@
-import {Link, NavLink, useHistory} from "react-router-dom";
-import {Input, Menu, Dropdown} from "antd";
+import { Link, NavLink, useHistory } from "react-router-dom";
+import { Input, Menu, Dropdown } from "antd";
 import {
   FaBell,
   FaChartBar,
@@ -14,11 +14,15 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import logoImage from "../../assets/images/logo.svg";
+import * as UserActions from '../../store/user/actions';
+import { storage } from '../../services/config/storage';
 
 // Styles
 import "./styles.scss";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-const {Search} = Input;
+const { Search } = Input;
 
 function MainContainer(props) {
   const onSearch = (value) => console.log(value);
@@ -38,6 +42,17 @@ function MainContainer(props) {
           href="https://www.luohanacademy.com"
         >
           2nd item
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          onClick={async () => {
+            await props.resetUser();
+            storage.destroy.authToken();
+            history.push('/');
+          }}
+        >
+          Logout
         </a>
       </Menu.Item>
     </Menu>
@@ -147,5 +162,9 @@ function MainContainer(props) {
     </main>
   );
 }
-
-export default MainContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    resetUser: bindActionCreators(UserActions.resetUser, dispatch)
+  }
+}
+export default connect(null, mapDispatchToProps)(MainContainer);

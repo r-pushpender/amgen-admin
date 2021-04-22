@@ -9,6 +9,8 @@ export default function (state = initialState, action) {
             return setUserEmail(state, payload);
         case actionTypes.SET_USER_DETAILS:
             return setUserDetails(state, payload);
+        case actionTypes.RESET_USER:
+            return resetUser();
         default:
             return state;
     }
@@ -25,5 +27,11 @@ const setUserDetails = (state, payload) => {
     return {
         ...state,
         details: payload,
+    }
+}
+
+const resetUser = () => {
+    return {
+        ...initialState
     }
 }

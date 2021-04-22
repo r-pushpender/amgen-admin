@@ -39,3 +39,11 @@ export const verifyOtp = (
   }
 };
 
+export const resetUser = (payload) => async (dispatch) => {
+  try {
+    dispatch(UserActionCreators.resetUser());
+  }
+  catch (err) {
+
+  }
+}

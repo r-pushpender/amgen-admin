@@ -13,3 +13,10 @@ export function setUserDetails(payload) {
         payload,
     }
 }
+
+export function resetUser() {
+    return {
+        type: actionTypes.RESET_USER,
+
+    }
+}
