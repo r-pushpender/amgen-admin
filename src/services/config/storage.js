@@ -45,7 +45,8 @@ const fetch = {
 
 const destroy = {
   authToken: () => {
-    checkStorage().removeItem(LS_KEY.auth_token);
+    localStorage.removeItem(LS_KEY.auth_token);
+    sessionStorage.removeItem(LS_KEY.auth_token);
   },
   keepLoggedIn: () => {
     localStorage.removeItem(
