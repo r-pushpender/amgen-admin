@@ -1,5 +1,5 @@
 // Styles
-import {Checkbox} from "antd";
+import { Checkbox } from "antd";
 import "./styles.scss";
 
 function CheckboxPrimary(props) {
@@ -8,7 +8,7 @@ function CheckboxPrimary(props) {
   }
   return (
     <div className={`checkbox-style ${props.checkboxStyle}`}>
-      <Checkbox onChange={onChange}>{props.label}</Checkbox>
+      <Checkbox onChange={onChange} {...props}>{props.label}</Checkbox>
     </div>
   );
 }

@@ -1,11 +1,9 @@
 const LS_KEY = {
   auth_token: 'loginUserDetail',
+  keep_logged_in: 'ex-fg'
 };
 let storageType = checkStorage();
 function checkStorage() {
-  if (!window.localStorage.getItem('ex-fg')) {
-    window.localStorage.setItem('ex-fg', 'check');
-  }
   if (window.localStorage.getItem('ex-fg')) return sessionStorage;
   else return localStorage;
 }
@@ -17,6 +15,12 @@ const set = {
       JSON.stringify({
         auth_token: data,
       })
+    );
+  },
+  keepLoggedIn: () => {
+    localStorage.setItem(
+      LS_KEY.keep_logged_in,
+      'check'
     );
   },
 };
@@ -31,11 +35,22 @@ const fetch = {
       } catch (err) { }
     }
   },
+  keepLoggedIn: () => {
+    const data = localStorage.getItem(LS_KEY.keep_logged_in);
+    if (data) {
+      return data;
+    }
+  },
 };
 
 const destroy = {
   authToken: () => {
     checkStorage().removeItem(LS_KEY.auth_token);
+  },
+  keepLoggedIn: () => {
+    localStorage.removeItem(
+      LS_KEY.keep_logged_in,
+    );
   },
 };
 

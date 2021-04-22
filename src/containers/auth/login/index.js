@@ -7,18 +7,32 @@ import InputPrimary from "../../../components/inputPrimary";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as UserActions from '../../../store/user/actions';
 import * as yup from 'yup';
+import React, { useState, useEffect } from 'react';
 
 // Styles
 import "./styles.scss";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { storage } from "../../../services/config/storage";
 
 function Login(props) {
+
+  const [keepLoggedIn, setKeepLoggedIn] = useState(storage.fetch.keepLoggedIn() ? true : false);
+
   let history = useHistory();
 
   function handleClick() {
     history.push("/confirm-signin");
   }
+
+  useEffect(() => {
+    if (keepLoggedIn) {
+      storage.set.keepLoggedIn();
+    }
+    else {
+      storage.destroy.keepLoggedIn();
+    }
+  }, [keepLoggedIn])
 
   return (
     <div className="login-page-style">
@@ -77,7 +91,7 @@ function Login(props) {
                           label="Password"
                         />
                       </div>
-                      <CheckboxPrimary label="Keep me signed in" />
+                      <CheckboxPrimary label="Keep me signed in" checked={keepLoggedIn} onChange={(event) => setKeepLoggedIn(event.target.checked)} />
 
                       <ButtonPrimary
                         title="Sign In"
