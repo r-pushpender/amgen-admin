@@ -31,7 +31,7 @@ export const verifyOtp = (
       dispatch(UserActionCreators.setUserDetails(response));
     }
     else {
-      console.log("Invalid verify");
+      toast.error(response?.error_message);
     }
     return response;
   } catch (err) {
